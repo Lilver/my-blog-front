@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 
+import Father from './page/Father.jsx'
+
 class App extends Component {
   render() {
     return (
       <div>
-        app
+        <Father/>
       </div>
     )
   }
 }
 
-// export default hot(App);
 export default App;

@@ -21,13 +21,15 @@ module.exports = {
                 loader: 'file-loader',
                 options: {
                     limit: 10000,
+                    name: 'font/[name].[ext]',
                 }
             },
             {
                 test: /\.(jpg|png|gif|jpeg|bmp)$/,
                 loader: 'file-loader',
                 options: {
-                    limit: 8192
+                    limit: 8192,
+                    name: 'img/[name].[ext]',
                 }
             }
         ]

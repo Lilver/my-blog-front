@@ -10,6 +10,7 @@ module.exports = {
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
+                    name: 'font/[name].[ext]',
                 },
                 exclude: path.resolve(__dirname, 'node_modules')
             },
@@ -17,7 +18,8 @@ module.exports = {
                 test: /\.(jpg|png|gif|jpeg|bmp)$/,
                 loader: 'url-loader',
                 options: {
-                    limit: 8192
+                    limit: 8192,
+                    name: 'img/[name].[ext]',
                 },
                 exclude: path.resolve(__dirname, 'node_modules')
             }

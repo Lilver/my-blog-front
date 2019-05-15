@@ -45,8 +45,9 @@ const baseConfig = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, '../src/index.html'),
-            inject: 'body'
+            template: path.resolve(__dirname, '../static/index.html'),
+            inject: 'body',
+            favicon: path.resolve(__dirname, '../static/favicon.ico'),
         }),
         new CleanWebpackPlugin('dist'),
         new ExtractTextPlugin({
