@@ -1,0 +1,21 @@
+.app-body {
+  margin: auto;
+}
+
+/* @media screen and (min-width: 1200px) {
+  .app-body {
+    width: 750px;    
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .app-body {
+    width: 970px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .app-body {
+    width: 1140px;
+  }
+} */

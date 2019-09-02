@@ -2,8 +2,9 @@ const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const ExtractTextPlugin =  require('extract-text-webpack-plugin');
+const miniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const isDev = process.env.NODE_ENV === 'development';
 const baseConfig = {
     entry: {
         index: path.join(__dirname, '../src/index.js'),
@@ -22,24 +23,42 @@ const baseConfig = {
                 }
             },
             {
-                test: /\.(less|css)/,
+                test:/\.css$/,
                 exclude: /node_modules/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [
-                        'css-loader?minimize=true',
-                        {
-                            loader: 'postcss-loader',
-                            options: {
-                                ident: "postcss",
-                                plugins: [
-                                    require("autoprefixer")("last 100 versions")
-                                ]
+                use: [
+                    miniCssExtractPlugin.loader,
+                    'css-loader',
+                ]
+            },
+            {
+                test: /\.less$/,
+                exclude: /node_modules/,
+                use: [
+                    miniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            // minify: true,
+                            modules: {
+                                localIdentName: '[local]_[md5:contenthash:hex:5]',
                             }
-                        },
-                        'less-loader'
-                    ]
-                })
+                        }
+
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            ident: "postcss",
+                            plugins: [
+                                require("autoprefixer")("last 100 versions")
+                            ]
+                        }
+                    },
+                    {
+                        loader: require.resolve('less-loader'),
+                        
+                    }
+                ]
             }
         ]
     },
@@ -50,8 +69,8 @@ const baseConfig = {
             favicon: path.resolve(__dirname, '../static/favicon.ico'),
         }),
         new CleanWebpackPlugin('dist'),
-        new ExtractTextPlugin({
-            filename: `[name]_[contenthash:8].css`
+        new miniCssExtractPlugin({
+            filename:  isDev ? `[name]_[hash:5].css` : '[name].css'
         })
     ]
 }
