@@ -1,5 +1,12 @@
+body{
+  margin: 0px;
+  /* cursor: url('http://www.005.tv/templets/muban/moe_style/image/cur/1.cur'),auto; */
+  /* cursor: url('./assets/img/Arrow.ani'),auto; */
+}
+
 .app-body {
   margin: auto;
+  /* padding-top: 70px; */
 }
 
 /* @media screen and (min-width: 1200px) {

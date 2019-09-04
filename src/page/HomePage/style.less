@@ -1,3 +1,19 @@
-.a {
-  color: rebeccapurple;
+@import '../../globalVar.less';
+
+.container {
+  height: 2000px;
+
+  .banner {
+    height: 600px;
+    background: @bannerBg no-repeat;
+    position: relative;
+    z-index: -99;
+    margin-top: calc(0px - @bannerHeight);
+    // background-position: 50%;
+    background-size: 100%;
+    // background-attachment: fixed;
+
+  }
+
 }
+
