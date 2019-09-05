@@ -17,7 +17,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(woff|woff2|svg|ttf|eot)/,
+                test: /\.(woff|woff2|ttf|eot)/,
                 loader: 'file-loader',
                 options: {
                     limit: 10000,
@@ -25,7 +25,7 @@ module.exports = {
                 }
             },
             {
-                test: /\.(jpg|png|gif|jpeg|bmp)$/,
+                test: /\.(jpg|png|gif|jpeg|bmp|svg)$/,
                 loader: 'file-loader',
                 options: {
                     limit: 8192,

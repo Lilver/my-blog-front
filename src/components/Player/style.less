@@ -9,8 +9,37 @@
   // border-radius: 5px;
   // border: 3px solid @mikuColor;
 
-  transition: 0.1s;
+  .tip {
+    width: 100px;
+    background: #ffffff;
+    position: absolute;
+    bottom: -40px;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 5px;
+    left: 50%;
+    padding: 5px;
+    box-sizing: border-box;
+    transform: translateX(-50%);
 
+    &::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      border: #ffffff 10px solid;
+      left: 50%;
+      transform: translateX(-50%);
+      border-top-color: rgba(0,0,0,0);
+      border-left-color: rgba(0,0,0,0);
+      border-right-color: rgba(0,0,0,0);
+
+    }
+  }
+
+  audio {
+    width: 0px;
+    height: 0px;
+  }
   .tv {
     width: 100%;
     height: 100%;
@@ -19,21 +48,52 @@
     }
   }
 
-  .cover {
+  .screen {
     position: absolute;
     width: 101px;
     height: 63px;
     top: 37px;
     left: 24px;
     overflow: hidden;
-    background: #ffffff;
     border-radius: 3px;
+  }
+
+  .cover {
     overflow: hidden;
-    &>img {
-      height: 100%;
-      width: auto;
+    background-size: cover;
+    
+    .mikuDance {
+      height: 60px;
+      position: absolute;
+      bottom: -2px;
+      right: -10px;
+      transition: 0.4s;
+      &>img {
+        height: 100%;
+        width: auto;
+      }
+    }
+
+    .hidden {
+      bottom:  -60px;
     }
   }
+  
+  .intro{
+    color: rgba(0,0,0,0);
+    z-index: 3;
+  }
+
+  .intro:hover {
+    background: rgba(0, 0, 0, 0.7);
+    font-size: 12px;
+    color: #ffffff;
+    overflow: scroll;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+
+  
 
   .btnRow {
     position: absolute;
@@ -67,3 +127,4 @@
     }
   }
 }
+
