@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 
 import Style from './style.less';
+
 const playerList = [
   {
     name: 'からくりピエロ',
@@ -14,7 +15,7 @@ const playerList = [
     singer: '初音ミク',
     cover: 'http://pxaxq1pkc.bkt.clouddn.com/image/song%E3%81%97%E3%82%93%E3%81%8B%E3%81%84%E3%81%97%E3%82%87%E3%81%86%E3%81%97%E3%82%99%E3%82%87%28%E6%B7%B1%E6%B5%B7%E5%B0%91%E5%A5%B3%29.jpg',
     url: 'http://www.ytmp3.cn/down/53276.mp3',
-  }
+  },
 ];
 
 class Player extends Component {
@@ -99,7 +100,6 @@ class Player extends Component {
       isPlaying: !isPlaying,
       showTip: false,
     });
-    
   }
 
   initSound = () => {
@@ -111,13 +111,12 @@ class Player extends Component {
     this.sound.onended = this.nextSong;
 
     // this.playSound();
-
   }
 
   prevSong = () => {
     const { index, list } = this.state;
     this.setState({
-      index: index === 0 ? list.length - 1 : index - 1
+      index: index === 0 ? list.length - 1 : index - 1,
     }, () => {
       this.playSound();
     });
@@ -126,7 +125,7 @@ class Player extends Component {
   nextSong = () => {
     const { index, list } = this.state;    
     this.setState({
-      index: index === list.length - 1 ? 0 : index + 1
+      index: index === list.length - 1 ? 0 : index + 1,
     }, () => {
       this.playSound();
     });
@@ -144,33 +143,37 @@ class Player extends Component {
     };
   }
 
-  
-
   render() {
-    const { isPlaying, list, index, showTip } = this.state;
+    const { 
+      isPlaying, list, index, showTip,
+    } = this.state;
     return (
-      <div 
+      <div
         className={Style.player}
-        ref={p => (this.player = p)}
+        ref={(p) => { this.player = p; }}
         onMouseDown={this.clickDown}
-        style={{'display': list.length > 0 ? 'block': 'none'}}
+        style={{ display: list.length > 0 ? 'block' : 'none' }}
       >
-        { showTip ? <div className={Style.tip}>戳我播放bgm<br/>_(:з」∠)_</div> : null}
+        { showTip ? <div className={Style.tip}>戳我播放bgm<br />_(:з」∠)_</div> : null}
         <audio
           className={Style.audio}
-          ref={s => (this.sound = s)}
+          ref={(s) => { this.sound = s; }}
         />
-        <div className={Style.tv}><img src={require('../../assets/icon/icon_tv_2.svg')}/></div>
-        <div className={classNames(Style.cover, Style.screen)} style={{'backgroundImage': `url(${list[index].cover})`, }}>
-          <div className={classNames(Style.mikuDance, {[Style.hidden]: !isPlaying})}>
-            <img src={require('../../assets/img/miku.gif')} />
+        <div className={Style.tv}><img src={require('assets/icon/icon_tv_2.svg')} alt="tv" /></div>
+        <div className={classNames(Style.cover, Style.screen)} style={{ backgroundImage: `url(${list[index].cover})` }}>
+          <div className={classNames(Style.mikuDance, { [Style.hidden]: !isPlaying })}>
+            <img src={require('../../assets/img/miku.gif')} alt="miku" />
           </div>
         </div>
-        <div className={classNames(Style.intro, Style.screen)}>{list[index].name} - {list[index].singer}</div>
+        <div className={classNames(Style.intro, Style.screen)}>
+          {list[index].name}
+        - 
+          {list[index].singer}
+        </div>
         <div className={Style.btnRow}>
-          <img src={require('../../assets/icon/icon_back.svg')} className={Style.btn} onClick={this.prevSong}/>
-          <div className={classNames({[Style.isPlaying]: isPlaying}, Style.playControlBtn)} onClick={this.togglePlay} />
-          <img src={require('../../assets/icon/icon_forward.svg')} className={Style.btn} onClick={this.nextSong} alt="next"/>
+          <img src={require('assets/icon/icon_back.svg')} className={Style.btn} onClick={this.prevSong} alt="icon_back" />
+          <div className={classNames({ [Style.isPlaying]: isPlaying }, Style.playControlBtn)} onClick={this.togglePlay} />
+          <img src={require('assets/icon/icon_forward.svg')} className={Style.btn} onClick={this.nextSong} alt="next" />
         </div>
       </div>
     );

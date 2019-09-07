@@ -1,30 +1,35 @@
-{
-  "extends": [
-    "eslint:recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings"
-  ],
-  "parser": "babel-eslint",
-  "plugins": [
-    "react"
-  ],
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true,
-      "experimentalObjectRestSpread": true
-    }
+module.exports = {
+  extends: ['eslint-config-airbnb'],
+  env: {
+    browser: true,
+    node: true,
+    jasmine: true,
+    jest: true,
+    es6: true,
   },
-  "env": {
-    "es6": true,
-    "browser": true,
-    "node": true,
-    "jquery": true,
-    "mocha": true
+  globals: {
+    $: false,
+    jQuery: false,
+    Highcharts: false,
+    require: false
   },
-  "rules": {
+  parser: 'babel-eslint',
+  parserOptions: {
+    ecmaVersion: 6,
+    ecmaFeatures: {
+      jsx: true,
+      experimentalObjectRestSpread: true,
+    },
+  },
+  plugins: [
+    'react',
+    'babel',
+  ],
+  rules: {
+    "max-len": 0,
+    "global-require": 0,
     "quotes": 0,
+    "quote-props": 0,
     "no-console": 1,
     "no-debugger": 1,
     "no-var": 1,
@@ -66,8 +71,25 @@
     "import/extensions": 1,
     "react/self-closing-comp": 1,
     "react/sort-comp": 1,
-    "react/jsx-wrap-multilines": 1
+    "react/jsx-wrap-multilines": 1,
+    "react/jsx-one-expression-per-line": 0,
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+    "import/extensions": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "jsx-a11y/media-has-caption": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/no-noninteractive-element-interactions": 0,
+    
   },
-  "globals": {
+  settings: {
+    'import/resolver': {
+      alias: {
+        map: [
+          ['components', './src/components'],
+          ['assets', './src/assets'],
+        ],
+      }
+    }
   }
-}
+};
+

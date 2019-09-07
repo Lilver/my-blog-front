@@ -1,7 +1,7 @@
 @import '../../globalVar.less';
 
 .bar {
-  height: @bannerHeight;
+  height: @navHeight;
   width: 100%;
   // background:hsla(0,0%,100%,.25) border-box;
   box-sizing: border-box;
@@ -10,7 +10,7 @@
   top: 0;
   display: flex;
   align-items: center;
-  padding: 0px @bannerPadding;
+  padding: 0px @navPadding;
   overflow: hidden;
   
 
@@ -32,8 +32,8 @@
   }
 
   .portrait {
-    width: calc(@bannerHeight - @bannerPadding);
-    height: calc(@bannerHeight - @bannerPadding);
+    width: calc(@navHeight - @navPadding);
+    height: calc(@navHeight - @navPadding);
     border-radius: 999rem;
     overflow: hidden;
     margin-right: 40px;
@@ -45,10 +45,10 @@
   }
 
   .link {
-    height: @bannerHeight;
+    height: @navHeight;
     width: 100px;
     font-size: 14px;
-    color: #ffffff;
+    // color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,14 +59,14 @@
 
     &:hover {
       // transform: scale(1.2);
-      background: rgba(255,255,255, 0.3);
-      color: #ffffff;
+      background: rgba(0,0,0, 0.5);
+      // color: #ffffff;
       // background: linear-gradient(to bottom, #ffffff , rgba(0,0,0,0)); /* 标准语法 */
     }
 
     .linkBtn {
-      height: calc(@bannerHeight -  @bannerPadding);
-      line-height: calc(@bannerHeight -  @bannerPadding);
+      height: calc(@navHeight -  @navPadding);
+      line-height: calc(@navHeight -  @navPadding);
       width: calc(100px - 20px);
       text-align: center;
       border-radius: 999rem;

@@ -8,9 +8,9 @@ const isDev = process.env.NODE_ENV === 'development';
 
 let config = {};
 if (isDev) {
-    config = merge(baseConfig, testConfig);
+  config = merge(baseConfig, testConfig);
 } else {
-    config = merge(baseConfig, prodConfig);
+  config = merge(baseConfig, prodConfig);
 }
 
 module.exports = config;
