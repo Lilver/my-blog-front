@@ -10,6 +10,7 @@ module.exports = {
     contentBase: path.join(__dirname, 'dist'),
     inline: true,
     port: 3000,
+    historyApiFallback: true,
     hot: false,
     overlay: {
       error: true,

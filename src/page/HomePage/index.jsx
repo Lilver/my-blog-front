@@ -2,13 +2,20 @@ import React, { Component } from 'react';
 
 import Style from './style.less';
 
-// import DigiClock from '../../components/DigiClock';
-
 class HomePage extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      
+    };
+  }
+
   render() {
     return (
       <main className={Style.container}>
         <section className={Style.banner}>
+
           <div className={Style.title}>
             <div className={Style.letter}>L</div>
             <div className={Style.letter}>i</div>
@@ -21,7 +28,6 @@ class HomePage extends Component {
             <div className={Style.letter}>屋</div>
           </div>
         </section>
-        {/* <DigiClock/> */}
         
       </main>
     );

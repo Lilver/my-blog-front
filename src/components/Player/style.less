@@ -2,7 +2,7 @@
 
 .player {
   position: fixed;
-  z-index: 999;
+  z-index: @playerZIndex;
   width: 150px;
   height: auto;
   // background: #ffffff;
@@ -81,7 +81,7 @@
   
   .intro{
     color: rgba(0,0,0,0);
-    z-index: 3;
+    z-index: 999;
   }
 
   .intro:hover {
@@ -101,7 +101,7 @@
     height: 36px;
     top: 100px;
     left: 24px;
-    background: @mikuColor;
+    background: @mainColor ;
     display: flex;
     align-items: center;
     justify-content: space-around;

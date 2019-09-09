@@ -73,6 +73,7 @@ module.exports = {
     "react/sort-comp": 1,
     "react/jsx-wrap-multilines": 1,
     "react/jsx-one-expression-per-line": 0,
+    "react/jsx-fragments": 0,
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
     "import/extensions": 0,
     "jsx-a11y/no-static-element-interactions": 0,

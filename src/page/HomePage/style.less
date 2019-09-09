@@ -1,19 +1,21 @@
 @import '../../globalVar.less';
 
-@import './outer.css';
-
 .container {
   height: 2000px;
   min-width: 750px;
 
   .banner {
-    height: @bannerHeight;
-    background: @bannerBg no-repeat;
+    overflow: hidden;
+    width: 100%;
     position: relative;
-    z-index: -99;
-    margin-top: calc(0px - @navHeight);
+    background: @bannerBg;
     background-size: 100%;
-    // background-attachment: fixed;
+    background-attachment: fixed;
+
+    &>img {
+      width: 100%;
+      height: auto;
+    }
 
     .title {
       display: flex;
@@ -21,13 +23,16 @@
       justify-content: center;
       width: auto;
       color: white;
-      height: @bannerHeight;
-      font: normal bold 20px "Product Sans", sans-serif;
+      height: auto;
+      font-size: 20px;
+      font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
       white-space: nowrap;
       position: absolute;
-      right: 0;
+      left: 50px;
       padding: @navHeight;
       box-sizing: border-box;
+      top: 10px;
+      -webkit-text-stroke: 3px @mainColor;
     }
 
     .letter {
@@ -36,7 +41,7 @@
       transform: translate3d(0, 0, 0);
       text-shadow: rgba(255, 255, 255, 0.4) 0 0 0.05em;
       font: normal 500 6rem 'Varela Round', sans-serif;
-      color: @mikuColor;
+      color: #ffffff;
     }
 
     .letter:nth-child(1) {
@@ -81,8 +86,30 @@
         // text-shadow: @mikuColor 0 1em 0.35em;
       }
     }
-
   }
-
 }
 
+/* 所以我们用min-width时，小的放上面大的在下面，同理如果是用max-width那么就是大的在上面，小的在下面 */
+@media screen and (min-width: 768px) {
+  .banner {
+    height: 400px;    
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .banner {
+    height: 500px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .banner {
+    height: 600px;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .banner {
+    height: 800px;
+  }
+}
