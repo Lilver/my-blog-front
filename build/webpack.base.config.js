@@ -6,9 +6,12 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
 const baseConfig = {
-  entry: {
-    index: path.join(__dirname, '../src/index.jsx'),
-  },
+  entry: [
+    'react-hot-loader/patch',
+    'webpack-dev-server/client?http://localhost:3000/',
+    'webpack/hot/only-dev-server',
+    path.join(__dirname, '../src/index.jsx'),
+  ],
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: 'bundle.js',
@@ -18,6 +21,7 @@ const baseConfig = {
     alias: {
       "components": path.resolve(__dirname, '../src/components'),
       "assets": path.resolve(__dirname, '../src/assets'),
+      "utils": path.resolve(__dirname, '../src/utils'),
     },
   },
   module: {

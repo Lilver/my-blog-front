@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
-
 const webpack = require('webpack');
+
 const UglifyjsWebpackPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
@@ -11,7 +11,9 @@ module.exports = {
     inline: true,
     port: 3000,
     historyApiFallback: true,
+    hotOnly: false,
     hot: false,
+    open: true,
     overlay: {
       error: true,
     },

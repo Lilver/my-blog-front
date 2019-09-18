@@ -80,7 +80,7 @@ module.exports = {
     "jsx-a11y/media-has-caption": 0,
     "jsx-a11y/click-events-have-key-events": 0,
     "jsx-a11y/no-noninteractive-element-interactions": 0,
-    
+    'import/no-unresolved': 0,
   },
   settings: {
     'import/resolver': {
@@ -88,6 +88,7 @@ module.exports = {
         map: [
           ['components', './src/components'],
           ['assets', './src/assets'],
+          ['utils', './src/assets'],
         ],
       }
     }

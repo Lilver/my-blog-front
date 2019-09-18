@@ -11,6 +11,11 @@ class HomePage extends Component {
     };
   }
 
+  componentDidMount() {
+    document.title = '个人主页';
+  }
+  
+
   render() {
     return (
       <main className={Style.container}>

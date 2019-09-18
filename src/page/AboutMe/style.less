@@ -1,0 +1,249 @@
+@import '../../globalVar.less';
+
+.container {
+  width: 100%;
+  min-height: 1000px;
+
+  .header {
+    width: 100%;
+    background: @aboutMeHeaderBg no-repeat;
+    background-size: 100%;
+    font-family: "Futura","Arial";
+
+    
+    .maskHeader {
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.7);
+      padding-top: 1px;
+      position: relative;
+
+      .title {
+        font-size: 100px;
+        width: 30%;
+        min-width: 400px;
+        border: 1px #000000 solid;
+        text-align: center;
+        margin: 80px auto 0;
+      }
+
+      .position {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 35px;
+        font-weight: 100;
+      }
+
+      .portraitContainer {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        bottom: -100px;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+        // transform: rotate(45deg);
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: -10px;
+          height: 1px;
+          background: #000000;
+          width: 200px;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          right: -10px;
+          background: #000000;
+          height: 200px;
+          width: 1px;
+          top: 0;
+
+        }
+
+        .portrait {
+          width: 100%;
+          height: 100%;
+          background: #ffffff;
+          overflow: hidden;
+          border: 1px #000000 solid;
+          box-sizing: border-box;
+  
+          &>img {
+            width: 100%;
+            height: 100%;
+            transform:  rotate(-45deg);
+          }
+          
+        }
+      }
+    }
+  }
+
+  .resumeBody {
+    height: 500px;
+    // background: yellowgreen;
+    margin: 150px auto 0;
+    padding: 50px 50px  0 0;
+    border-right: #000000 1px solid;
+
+    .resumeBlock:hover {
+      &>.itemHeader {
+        margin-left: -50px !important;
+        // color: @mainColor;
+        
+        // .ball {
+        //   background: @mainColor !important;
+        // }
+
+        // .line {
+        //   background: @mainColor !important;
+        // }
+      }
+    }
+
+    .itemHeader {
+      position: relative;
+      transition: 0.3s;
+      padding-top: 50px;
+      font-style: italic;
+
+      .itemTitle{
+        font-size: 30px;
+        padding-left: 50px;
+      }
+
+      .underline {
+        display: flex;
+        align-items: center;
+        .ball {
+          width: 20px;
+          height: 20px;
+          border-radius: 999rem;
+          background: #000000;
+         
+        }
+
+        .line{
+          height: 5px;
+          width: 580px;
+          background: #000000;
+          
+        }
+      }
+    }
+
+    .baseInfo {
+      margin-top: 50px;
+      padding-left: 40px;
+
+      .infoRow {
+        height: 60px;
+        min-width: 600px;
+        // background: palegoldenrod;
+        display: flex;
+
+        .item {
+          width: 50%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+
+          &>img {
+            width: 30px;
+            height: auto;
+            display: inline-block;
+            margin-right: 30px;
+          }
+
+          &>span {
+            font-size: 20px;
+          }
+
+          span:nth-child(3){
+            font-weight: lighter;
+          }
+
+        }
+      }
+    }
+    
+  }
+  
+}
+
+
+/* 所以我们用min-width时，小的放上面大的在下面，同理如果是用max-width那么就是大的在上面，小的在下面 */
+@media screen and (min-width: 768px) {
+  .header {
+    height: 400px;    
+  }
+
+  .resumeBody {
+    width: 600px
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .header {
+    height: 450px;
+  }
+  .resumeBody {
+    width: 750px
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header {
+    height: 500px;
+  }
+
+  .resumeBody {
+    width: 1000px
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .header {
+    height: 600px;
+  }
+
+  .resumeBody {
+    width: 1200px;
+  }
+}
+
+
+@keyframes giveResume {
+  0% {
+    
+  }
+}
+
+
+
+
+// @media screen and (min-width: 768px) {
+//   .resume {
+//     height: 400px;    
+//   }
+// }
+
+// @media screen and (min-width: 992px) {
+//   .resume {
+//     height: 500px;
+//   }
+// }
+
+// @media screen and (min-width: 1200px) {
+//   .resume {
+//     height: 600px;
+//   }
+// }
+
+// @media screen and (min-width: 1500px) {
+//   .resume {
+//     height: 800px;
+//   }
+// }

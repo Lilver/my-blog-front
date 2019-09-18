@@ -5,6 +5,12 @@ import Style from './style.less';
 
 const playerList = [
   {
+    name: 'Hand in Hand',
+    singer: '初音ミク',
+    cover: 'http://pxaxq1pkc.bkt.clouddn.com/image/song/Hand%20in%20Hand.jpg',
+    url: 'http://www.ytmp3.cn/down/36379.mp3',
+  },
+  {
     name: 'からくりピエロ',
     singer: '初音ミク',
     cover: 'http://pxaxq1pkc.bkt.clouddn.com/image/song%E3%81%8B%E3%82%89%E3%81%8F%E3%82%8A%E3%83%92%E3%82%9A%E3%82%A8%E3%83%AD%28%E6%B4%BB%E5%8A%A8%E5%B0%8F%E4%B8%91%29.jpg',

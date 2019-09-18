@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import classNames from 'classnames';
 
 import { Link } from 'react-router-dom';
 
@@ -13,11 +14,11 @@ class CommonNav extends Component {
         {
           id: 0,
           name: '主 页',
-          path: '/index',
+          path: '/',
         },
         {
           id: 1,
-          name: '个人信息',
+          name: '个人简历',
           path: '/me',
         },
         {
@@ -26,11 +27,21 @@ class CommonNav extends Component {
           path: '/album',
         },
       ],
+
+      activeBar: parseInt(sessionStorage.getItem('nav-active-bar'), 10) || 0,
     };
   }
 
+
+  toggleBar = (barId) => {
+    sessionStorage.setItem('nav-active-bar', barId);
+    this.setState({
+      activeBar: barId,
+    });
+  }
+
   render() {
-    const { tabBars } = this.state;
+    const { tabBars, activeBar } = this.state;
     return (
       <div className={Style.nav}>
         <div className={Style.portrait}>
@@ -38,7 +49,9 @@ class CommonNav extends Component {
         </div>
         {
           tabBars.map((bar) => (
-            <Link className={Style.tabBar} key={bar.id} to={bar.path}><span>{bar.name}</span></Link>
+            <Link
+              className={classNames(Style.tabBar, { [Style.activeBar]: activeBar === bar.id })} key={bar.id} to={bar.path} onClick={() => this.toggleBar(bar.id)}><span>{bar.name}</span>
+            </Link>
           ))
         }
       </div>
