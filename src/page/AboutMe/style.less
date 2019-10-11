@@ -20,7 +20,7 @@
 
       .title {
         font-size: 100px;
-        width: 30%;
+        width: 40%;
         min-width: 400px;
         border: 1px #000000 solid;
         text-align: center;
@@ -81,14 +81,13 @@
     }
   }
 
-  .resumeBody {
-    height: 500px;
+  .introBody {
     // background: yellowgreen;
     margin: 150px auto 0;
-    padding: 50px 50px  0 0;
+    padding: 50px 50px  50px 0;
     border-right: #000000 1px solid;
 
-    .resumeBlock:hover {
+    .introBlock:hover {
       &>.itemHeader {
         margin-left: -50px !important;
         // color: @mainColor;
@@ -101,6 +100,10 @@
         //   background: @mainColor !important;
         // }
       }
+    }
+
+    .introBlock {
+      margin: 0px auto 70px;
     }
 
     .itemHeader {
@@ -134,7 +137,7 @@
       }
     }
 
-    .baseInfo {
+    .detail {
       margin-top: 50px;
       padding-left: 40px;
 
@@ -165,8 +168,18 @@
             font-weight: lighter;
           }
 
+          span:nth-child(3){
+            font-weight: lighter;
+          }
         }
       }
+    }
+
+    .intro {
+      font-size: 24px;
+      font-weight: normal;
+      line-height: 30px;
+      margin-top: 40px;
     }
     
   }
@@ -180,7 +193,7 @@
     height: 400px;    
   }
 
-  .resumeBody {
+  .introBody {
     width: 600px
   }
 }
@@ -189,7 +202,7 @@
   .header {
     height: 450px;
   }
-  .resumeBody {
+  .introBody {
     width: 750px
   }
 }
@@ -199,7 +212,7 @@
     height: 500px;
   }
 
-  .resumeBody {
+  .introBody {
     width: 1000px
   }
 }
@@ -209,13 +222,13 @@
     height: 600px;
   }
 
-  .resumeBody {
+  .introBody {
     width: 1200px;
   }
 }
 
 
-@keyframes giveResume {
+@keyframes giveintro {
   0% {
     
   }
@@ -225,25 +238,25 @@
 
 
 // @media screen and (min-width: 768px) {
-//   .resume {
+//   .intro {
 //     height: 400px;    
 //   }
 // }
 
 // @media screen and (min-width: 992px) {
-//   .resume {
+//   .intro {
 //     height: 500px;
 //   }
 // }
 
 // @media screen and (min-width: 1200px) {
-//   .resume {
+//   .intro {
 //     height: 600px;
 //   }
 // }
 
 // @media screen and (min-width: 1500px) {
-//   .resume {
+//   .intro {
 //     height: 800px;
 //   }
 // }

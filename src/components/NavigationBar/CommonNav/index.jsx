@@ -18,13 +18,18 @@ class CommonNav extends Component {
         },
         {
           id: 1,
-          name: '个人简历',
+          name: '关于我',
           path: '/me',
         },
         {
           id: 2,
-          name: '相 册',
-          path: '/album',
+          name: 'Web前端',
+          path: '/front',
+        },
+        {
+          id: 3,
+          name: 'Golang',
+          path: '/golang',
         },
       ],
 

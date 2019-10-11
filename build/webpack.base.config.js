@@ -4,12 +4,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const HappyPack = require('happypack');
+
 const isDev = process.env.NODE_ENV === 'development';
 const baseConfig = {
   entry: [
-    'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:3000/',
-    'webpack/hot/only-dev-server',
     path.join(__dirname, '../src/index.jsx'),
   ],
   output: {
@@ -30,7 +29,7 @@ const baseConfig = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: 'happypack/loader?id=babel',
         },
       },
       {
@@ -82,6 +81,11 @@ const baseConfig = {
     new CleanWebpackPlugin('dist'),
     new MiniCssExtractPlugin({
       filename: isDev ? `[name]_[hash:5].css` : '[name].css',
+    }),
+    new HappyPack({
+      id: 'babel',
+      threads: 4,
+      loaders: ['babel-loader'],
     }),
   ],
 };

@@ -1,18 +1,54 @@
 import React, { Component } from 'react';
-import dayJs from 'dayjs';
+import ReactEcharts from 'echarts-for-react';
+// import dayJs from 'dayjs';
+
 import Style from './style.less';
 
+
 class AboutMe extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.state = {
 
-    }
+    };
   }
 
   componentDidMount() {
     document.title = "关于我";
+  }
+
+  getOption = () => {
+    return {
+      // color: ['#c23531', '#2f4554', '#61a0a8', '#d48265', '#91c7ae', '#749f83', '#ca8622', '#bda29a', '#6e7074', '#546570', '#c4ccd3'],
+      tooltip: {},
+      xAxis: {
+        data: ["HTML", "JavaScript", "CSS", "Golang", "网络"],
+      },
+      yAxis: {
+      },
+      series: [{
+        name: '熟练度',
+        type: 'bar',
+        data: [80, 85, 75, 70, 70],
+        itemStyle: {
+          normal: {
+            color: (params) => {
+              const colorList = ['#c23531', '#2f4554', '#61a0a8', '#d48265', '#91c7ae', '#749f83', '#ca8622'];
+              return colorList[params.dataIndex];
+            },
+          },
+        },
+        label: {
+          show: "true",
+          position: "top",
+          color: "auto",
+          fontWeight: "bolder",
+          backgroundColor: "rgba(0,0,0,0)",
+          fontSize: "20",
+        },
+      }],
+    };
   }
   
   render() {
@@ -20,7 +56,7 @@ class AboutMe extends Component {
       <div className={Style.container}>
         <header className={Style.header}>
           <div className={Style.maskHeader}>
-            <div className={Style.title}>RESUME</div>
+            <div className={Style.title}>SELF-INTRO</div>
             <div className={Style.position}>Web Developer</div>
             <div className={Style.portraitContainer}>
               <div className={Style.portrait}>
@@ -30,9 +66,9 @@ class AboutMe extends Component {
           </div>
         </header>
         
-        <main className={Style.resumeBody}>
+        <main className={Style.introBody}>
           {/* 个人基本信息 */}
-          <div className={Style.resumeBlock}>
+          <div className={Style.introBlock}>
             <div className={Style.itemHeader}>
               <div className={Style.itemTitle}>About Me</div>
               <div className={Style.underline}>
@@ -40,41 +76,17 @@ class AboutMe extends Component {
                 <div className={Style.line} />
               </div>
             </div>
-            <section className={Style.baseInfo}>
+            <section className={Style.detail}>
               <div className={Style.infoRow}>
                 <div className={Style.item}>
                   <img src={require('../../assets/icon/icon_user.svg')} alt="user" />
-                  <span>姓名：</span>
-                  <span>陈铒东</span>
+                  <span>名称：</span>
+                  <span>Lilver</span>
                 </div>
-                <div className={Style.item}>
-                  <img src={require('../../assets/icon/icon_calendar.svg')} alt="user" />
-                  <span>出生年月：</span>
-                  <span>1995.6</span>
-                </div>
-              </div>
-              <div className={Style.infoRow}>
                 <div className={Style.item}>
                   <img src={require('../../assets/icon/icon_briefcase.svg')} alt="user" />
                   <span>职位：</span>
                   <span>前端开发工程师</span>
-                </div>
-                <div className={Style.item}>
-                  <img src={require('../../assets/icon/icon_school.svg')} alt="user" />
-                  <span>毕业学校：</span>
-                  <span>上海理工大学</span>
-                </div>
-              </div>
-              <div className={Style.infoRow}>
-                <div className={Style.item}>
-                  <img src={require('../../assets/icon/icon_time.svg')} alt="user" />
-                  <span>工作年限：</span>
-                  <span>{dayJs().year() - 2017}年</span>
-                </div>
-                <div className={Style.item}>
-                  <img src={require('../../assets/icon/icon_phone.svg')} alt="user" />
-                  <span>电话：</span>
-                  <span>15921848978</span>
                 </div>
               </div>
               <div className={Style.infoRow}>
@@ -90,6 +102,41 @@ class AboutMe extends Component {
                 </div>
               </div>
             </section>
+          </div>
+
+          <div className={Style.introBlock}>
+            <div className={Style.itemHeader}>
+              <div className={Style.itemTitle}>Skills</div>
+              <div className={Style.underline}>
+                <div className={Style.ball} />
+                <div className={Style.line} />
+              </div>
+            </div>
+            <section className={Style.detail}>
+              <ReactEcharts
+                option={this.getOption()}
+                style={{ height: '500px', width: '60%' }}
+              />
+            </section>
+          </div>
+
+          <div className={Style.introBlock}>
+            <div className={Style.itemHeader}>
+              <div className={Style.itemTitle}>Introduction</div>
+              <div className={Style.underline}>
+                <div className={Style.ball} />
+                <div className={Style.line} />
+              </div>
+            </div>
+            <section className={Style.detail}>
+              <div className={Style.intro}>一个二刺螈Web开发者，会点美术，会点技术，会点吹比，会点游戏。</div>
+            </section>
+          </div>
+
+          <div className={Style.thanksWindow}>
+            <div className={Style.portrait}>
+              <img src={require('../../assets/img/love.gif')} alt="love" />
+            </div>
           </div>
           
         </main>

@@ -81,6 +81,7 @@ module.exports = {
     "jsx-a11y/click-events-have-key-events": 0,
     "jsx-a11y/no-noninteractive-element-interactions": 0,
     'import/no-unresolved': 0,
+    'arrow-body-style': 0,
   },
   settings: {
     'import/resolver': {

@@ -7,19 +7,19 @@ const playerList = [
   {
     name: 'Hand in Hand',
     singer: '初音ミク',
-    cover: 'http://pxaxq1pkc.bkt.clouddn.com/image/song/Hand%20in%20Hand.jpg',
+    cover: 'http://blog.lilver.cn/image/song/Hand%20in%20Hand.jpg',
     url: 'http://www.ytmp3.cn/down/36379.mp3',
   },
   {
     name: 'からくりピエロ',
     singer: '初音ミク',
-    cover: 'http://pxaxq1pkc.bkt.clouddn.com/image/song%E3%81%8B%E3%82%89%E3%81%8F%E3%82%8A%E3%83%92%E3%82%9A%E3%82%A8%E3%83%AD%28%E6%B4%BB%E5%8A%A8%E5%B0%8F%E4%B8%91%29.jpg',
+    cover: 'http://blog.lilver.cn/image/song%E3%81%8B%E3%82%89%E3%81%8F%E3%82%8A%E3%83%92%E3%82%9A%E3%82%A8%E3%83%AD%28%E6%B4%BB%E5%8A%A8%E5%B0%8F%E4%B8%91%29.jpg',
     url: 'http://www.ytmp3.cn/down/53279.mp3',
   },
   {
     name: 'しんかいしょうじょ',
     singer: '初音ミク',
-    cover: 'http://pxaxq1pkc.bkt.clouddn.com/image/song%E3%81%97%E3%82%93%E3%81%8B%E3%81%84%E3%81%97%E3%82%87%E3%81%86%E3%81%97%E3%82%99%E3%82%87%28%E6%B7%B1%E6%B5%B7%E5%B0%91%E5%A5%B3%29.jpg',
+    cover: 'http://blog.lilver.cn/image/song%E3%81%97%E3%82%93%E3%81%8B%E3%81%84%E3%81%97%E3%82%87%E3%81%86%E3%81%97%E3%82%99%E3%82%87%28%E6%B7%B1%E6%B5%B7%E5%B0%91%E5%A5%B3%29.jpg',
     url: 'http://www.ytmp3.cn/down/53276.mp3',
   },
 ];
