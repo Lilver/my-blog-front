@@ -4,16 +4,18 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const webpack = require('webpack');
 const HappyPack = require('happypack');
 
 const isDev = process.env.NODE_ENV === 'development';
 const baseConfig = {
-  entry: [
-    path.join(__dirname, '../src/index.jsx'),
-  ],
+  entry: {
+    bundle: path.join(__dirname, '../src/index.jsx'),
+    vendor: ['react', 'react-dom'],   
+  },
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: 'bundle.js',
+    filename: '[name].js',
   },
   resolve: {
     extensions: ['.js', 'jsx', '.json'],
@@ -87,6 +89,7 @@ const baseConfig = {
       threads: 4,
       loaders: ['babel-loader'],
     }),
+    new webpack.optimize.ModuleConcatenationPlugin(), // 作用域提升
   ],
 };
 

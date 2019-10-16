@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react';
-import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
+import { 
+  BrowserRouter, Route, Redirect, Switch, 
+} from 'react-router-dom';
 
 import Nav from 'components/NavigationBar/CommonNav/index.jsx';
 import Player from 'components/Player/index.jsx';
@@ -7,8 +9,8 @@ import Player from 'components/Player/index.jsx';
 
 import Style from './style.less';
 
-import HomePage from '../HomePage/index.jsx';
-import Me from '../AboutMe/index.jsx';
+import HomePage from '../page/HomePage/index.jsx';
+import Me from '../page/AboutMe/index.jsx';
 
 class App extends PureComponent {
   render() {
