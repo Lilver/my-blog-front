@@ -133,11 +133,11 @@ class AboutMe extends Component {
             </section>
           </div>
 
-          <div className={Style.thanksWindow}>
+          {/* <div className={Style.thanksWindow}>
             <div className={Style.portrait}>
               <img src={require('../../assets/img/love.gif')} alt="love" />
             </div>
-          </div>
+          </div> */}
           
         </main>
 

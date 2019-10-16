@@ -2,6 +2,7 @@
 const path = require('path');
 
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin'); // 引入 PWA 插件
 
 module.exports = {
   mode: "production",
@@ -45,4 +46,10 @@ module.exports = {
       }),
     ],
   },
+  plugins: [
+    new WorkboxPlugin.GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true,
+    }),
+  ],
 };

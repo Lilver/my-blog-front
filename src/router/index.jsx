@@ -15,19 +15,16 @@ import Me from '../page/AboutMe/index.jsx';
 class App extends PureComponent {
   render() {
     return (
-      <React.Fragment>
-        <div className={Style.appBody}>
-          <Player />
-          <BrowserRouter>
-            <Nav />
-            <Switch>
-              <Route path="/me" component={Me} />
-              <Route path="/" component={HomePage} />
-            </Switch>
-          </BrowserRouter>
-        </div>
-
-      </React.Fragment>
+      <div className={Style.appBody}>
+        <Player />
+        <BrowserRouter>
+          <Nav />
+          <Switch>
+            <Route path="/me" component={Me} />
+            <Route path="/" component={HomePage} />
+          </Switch>
+        </BrowserRouter>
+      </div>
     );
   }
 }

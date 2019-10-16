@@ -68,11 +68,16 @@ const baseConfig = {
           },
           {
             loader: require.resolve('less-loader'),
-                        
           },
         ],
       },
     ],
+  },
+  optimization: {
+    splitChunks: {
+      chunks: "all", // 所有的 chunks 代码公共的部分分离出来成为一个单独的文件
+      usedExports: true, // use js tree shaking
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
