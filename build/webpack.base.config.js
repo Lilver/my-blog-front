@@ -6,6 +6,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const webpack = require('webpack');
 const HappyPack = require('happypack');
+const PurifyCss = require('purifycss-webpack');
+const glob = require('glob');
 
 const isDev = process.env.NODE_ENV === 'development';
 const baseConfig = {
@@ -95,6 +97,13 @@ const baseConfig = {
       loaders: ['babel-loader'],
     }),
     new webpack.optimize.ModuleConcatenationPlugin(), // 作用域提升
+    new PurifyCss({
+      // 要做 CSS Tree Shaking 的路径文件
+      paths: glob.sync([
+        path.resolve(__dirname, '../src/*.html'), // 同样需要对 html 文件进行 tree shaking
+        path.resolve(__dirname, '../src/*.js'),
+      ]),
+    }),
   ],
 };
 
