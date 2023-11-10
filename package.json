@@ -38,7 +38,7 @@
     "webpack-parallel-uglify-plugin": "^1.1.0"
   },
   "dependencies": {
-    "axios": "0.18.1",
+    "axios": "1.6.0",
     "classnames": "^2.2.6",
     "react": "^16.9.0",
     "react-dom": "^16.8.1",
